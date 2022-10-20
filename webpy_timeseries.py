@@ -62,10 +62,6 @@ def setAnalyticData(data):
     global data_col
     data_col = data
     
-def setPath(csv_path):
-    global filepath
-    filepath = csv_path
-
 def setThreshold(th):
     global threshold
     threshold = th

@@ -1,4 +1,4 @@
-timestamp,acc_x,acc_y,acc_z,gyro_x,gyro_y,gyro_z
+timestamp,acc_x,acc_y,acc_z,gyro_x,gyro_y,gyro_z,date
 4249,167,291,-9748,5,-1,-7,03/03/2022 11:15:53
 4250,167,267,-9786,4,0,-6,03/03/2022 11:15:53
 4251,167,296,-9791,5,-1,-6,03/03/2022 11:15:53

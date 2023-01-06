@@ -13,13 +13,14 @@ import plotly.graph_objects as go
 import webpy_timeseries as ts
 
 def page():
-    ts.init()
+    Path = 'C:/Users/Thanaluk/Documents/MXprofile/dataset/move/move_2.csv' #change file here
+    ts.setWindowsize(20) #change windowsize here
+    ts.init(Path,'acc_x') #change analytics data here
     steam_df = ts.getDataframe()
     approx_P = ts.getMatrixprofile()
     analytic_motif = ts.getMotif()
     m = ts.getWindowsize()
     print(steam_df)
-    print(approx_P)
 
     fig = make_subplots(rows=2, cols=1, shared_xaxes=True, vertical_spacing=0.02)
     fig.add_trace(go.Scatter(x=steam_df.index, y= steam_df[steam_df.columns[1]].values, name = steam_df.columns[1],mode = 'lines'), row=2 ,col=1) #raw data
@@ -29,7 +30,6 @@ def page():
         fig.add_vline(x=analytic_motif[idx], line_width=1, line_dash="dash", line_color="green",row=1,col=1)
     html = fig.to_html(include_plotlyjs="require", full_html=False)
     put_html(html)
-
 
 if __name__ == '__main__':
     pywebio.start_server(page, port=80) #your local default port is 80
